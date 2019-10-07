@@ -1,0 +1,12 @@
+# dependencies
+/node_modules
+/bower_components
+
+#System Files
+.DS_Store
+Thumbs.db
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
