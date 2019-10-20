@@ -7,16 +7,23 @@ import Posts from './components/Posts';
 import { Logo, Askme } from './components/Georgie';
 import './styles.scss';
 
+
+
 class App extends Component {
+
+ callPosts(){
+    fetch("http://localhost:3001/")
+        .then(res => res.text())
+        .then(res => this.setState({post:  JSON.parse(res)})
+        
+    )
+}
+// this.setState({post: JSON.parse(res) }); 
+componentWillMount() {
+    this.callPosts();
+}
 	state = {
-		post: [
-			{ user: 'Me', text: 'Im sitting down here', color: '' },
-			{
-				user: 'Notme',
-				text: "Resting my head, on a pillow made of crows's feathers",
-				color: ''
-			}
-		]
+		post: [	]
 	};
 	addPost = x => {
 		let post = [x, ...this.state.post];
