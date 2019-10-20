@@ -18,7 +18,7 @@ const Posts = ({ post }) => {
 				];
 				//const randomColour = colors[Math.floor(Math.random() * 8)] + '-text';
 				return (
-					<div className={'post-container ' + post.color}>
+					<div className={'post-container ' + post.color + '-text'}>
 						<p>{post.user + ':'}</p>
 						<section>
 							<i>{'\t' + post.text}</i>

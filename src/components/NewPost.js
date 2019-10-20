@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-var randomColour = '';
+// var randomColour = '';
 
 var colors = [
 	'darkslategray',
@@ -17,8 +17,8 @@ var colors = [
 
 class NewPost extends Component {
 	state = {
-		text: '',
 		user: 'user',
+		text: '',
 		color: ''
 	};
 
@@ -40,10 +40,12 @@ class NewPost extends Component {
 	handleSubmit = e => {
 		e.preventDefault();
 		this.setState({
-			color: colors[Math.floor(Math.random() * 8)] + '-text'
+			color: colors[Math.floor(Math.random() * 8)] 
+
 		});
 		this.props.addPost(this.state);
 		console.log(this.state);
+		return
 	};
 	updatetext = evt => {
 		this.setState({
