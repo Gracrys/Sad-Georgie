@@ -42,11 +42,18 @@ class NewPost extends Component {
 		this.setState({
 			color: colors[Math.floor(Math.random() * 8)] 
 
-		});
-		this.props.addPost(this.state);
-		console.log(this.state);
-		return
-	};
+		},()=> this.props.addPost(this.state));
+		
+
+	var request = new XMLHttpRequest();
+		
+		request.open('POST', 'http://localhost:3001/');
+	request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+	request.setRequestHeader('X-Requested-With','XMLHttpRequest')
+
+		request.send(JSON.stringify(this.state))
+
+}
 	updatetext = evt => {
 		this.setState({
 			text: evt.target.value

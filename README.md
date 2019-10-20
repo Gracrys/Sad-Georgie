@@ -7,5 +7,5 @@ This WIP is a Web app made in react js (later will be exported to reasonml), thi
 
 ## Issues
 
-[ ] - Posts not having color on first update
+[x] - Posts not having color on first update
 [ ] - add a loading phase
